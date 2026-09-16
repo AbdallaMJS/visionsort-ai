@@ -25,7 +25,6 @@ class GradCAM:
         self._backward_handle.remove()
 
     def __call__(self, image_tensor, class_index: int | None = None) -> np.ndarray:
-        import torch
         import torch.nn.functional as F
 
         self.model.zero_grad(set_to_none=True)
